@@ -11,7 +11,7 @@ Go to: [/postman-collections/README.md](postman-collections/)
 ## # Time consume
 1. Planing: Undersanding and planing took almost 1.5 hour
 2. MVP-scaffolding: 2 hours
-3. API Logic to recive request: ....
+3. API Logic to recive request: 2 hours
 4. API Logic to response: ...
 5. Code quality improvments: ....
 
@@ -27,8 +27,8 @@ Go to: [/postman-collections/README.md](postman-collections/)
     - Accepts JSON body w/ dummy
     - Response JSON body w/ dummy
 > End of `TimeConsume.2`
-5. Match consumer input with request w/ FTX
-> Aim to finalize by today (01/12/2021)
+5. ✅ - Match consumer input with request w/ FTX
+> End of `TimeConsume.3`
 6. Match consumer input with response /Response
 > Aim to finalize by tomorrow (02/12/2021)
 7. Code cleaning and moving into better source-code w/ boilerplate
