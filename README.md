@@ -24,3 +24,10 @@ A web service that provides quotes for digital currency trades using data from t
 > Aim to finalise by tomorrow (02/12/2021)
 10. Code cleaning and moving into better source-code w/ boilerplate
 > Aim to finalise by Friday day... (03/12/2021)
+
+---
+
+## # Postman collections
+Application built-in API request samples exist with Postman Collection folder.
+
+Go to: [/postman-collections/README.md](postman-collections/)
