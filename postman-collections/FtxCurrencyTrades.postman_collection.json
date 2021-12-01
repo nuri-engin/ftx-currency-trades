@@ -40,9 +40,63 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{LOCAL}}",
+					"raw": "{{LOCAL}}/api/v1",
 					"host": [
 						"{{LOCAL}}"
+					],
+					"path": [
+						"api",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Do currency trade",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Acc",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "action",
+							"value": "buy",
+							"type": "text"
+						},
+						{
+							"key": "base_currency",
+							"value": "ETH",
+							"type": "text"
+						},
+						{
+							"key": "quote_currency",
+							"value": "USD",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "1231",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{LOCAL}}/api/v1/trade",
+					"host": [
+						"{{LOCAL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"trade"
 					]
 				}
 			},
