@@ -5,6 +5,9 @@ const router = express.Router();
 // Call the services
 const tradeService = require('./trade.service');
 
+// Call the utils/helper functions
+const confirmProceedTradeRequest = require('../utils/confirmProceedTradeRequest');
+
 // Call the constants/configs
 const { PATHS, STATUS_CODES } = require('../constants');
 
@@ -18,8 +21,8 @@ function handleTradeRequest(req, res, next) {
     const { action, base_currency, quote_currency, amount } = req.body;
 
     // Handle error-first convention.
-    if (!action && !base_currency && !quote_currency && !amount) {
-        res.status(400).send({
+    if (!confirmProceedTradeRequest(action, base_currency, quote_currency, amount)) {
+        return res.status(400).send({
             status: STATUS_CODES.badRequest,
             message: "We cannot proceed with the request! There are missing payload values..."
         });

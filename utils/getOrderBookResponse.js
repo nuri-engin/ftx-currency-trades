@@ -24,6 +24,7 @@ const getOrderBookResponse = async (orderBookURL, res) => {
                 });
             }
 
+            // The Trade.Controller will response to the consumer.
             return {
                 status: STATUS_CODES.success,
                 message: orderBookRes.data.result
