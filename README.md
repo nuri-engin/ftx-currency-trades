@@ -27,7 +27,7 @@ Go to: [/postman-collections/README.md](postman-collections/)
     - Accepts JSON body w/ dummy
     - Response JSON body w/ dummy
 > End of `TimeConsume.2`
-5. ✅ - Match consumer input with request w/ FTX
+5. ✅ - Match consumer input with request to the FTX's `orderbook` API.
 > End of `TimeConsume.3`
 6. Match consumer input with response /Response
 > Aim to finalize by tomorrow (02/12/2021)
