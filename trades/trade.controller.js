@@ -25,9 +25,11 @@ function handleTradeRequest(req, res, next) {
         });
     }
 
-    tradeService.proceedTradeRequest({ action, base_currency, quote_currency, amount })
+    // No problem exist, then let's proceed for next step.
+    tradeService.proceedTradeRequest({ res, action, base_currency, quote_currency, amount })
         .then((action) => {
             res.json(action);
         })
+        // Calls the global error-handler.
         .catch(next);
 }
