@@ -1,3 +1,6 @@
+// Call the constants/configs
+const { ACTION_TYPES } = require('../constants');
+
 /**
  * Responsible function to ensure consumer provided correct values.
  * This logic holds the application rules. App flow documents would relly on here...
@@ -15,7 +18,7 @@ const confirmProceedTradeRequest = (action, base_currency, quote_currency, amoun
     amount = !!amount && Number(amount);
 
     return (
-        !!action && typeof action === 'string' && (action === 'buy' || action === 'sell') &&
+        !!action && typeof action === 'string' && (action === ACTION_TYPES.buy || action === ACTION_TYPES.sell) &&
         !!base_currency && typeof base_currency === 'string' &&
         !!quote_currency && typeof quote_currency === 'string' &&
         typeof amount === 'number' && !isNaN(amount)

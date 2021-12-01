@@ -1,7 +1,3 @@
-// App basics
-const express = require('express');
-const router = express.Router();
-
 // Call the constants/configs
 const { PATHS, STATUS_CODES } = require('../constants');
 

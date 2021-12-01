@@ -1,7 +1,3 @@
-// App basics
-const express = require('express');
-const router = express.Router();
-
 // Call the services
 const tradeService = require('./trade.service');
 

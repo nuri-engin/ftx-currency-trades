@@ -1,3 +1,6 @@
+// Call the constants/configs
+const { ACTION_TYPES } = require('../constants');
+
 // Call the utils/helper functions
 const generateMarketPair = require('../utils/generateMarketPair');
 const generateFTXOrderBookURL = require('../utils/generateFTXOrderBookURL');
@@ -25,9 +28,29 @@ module.exports = {
     // Step 01: Request to the FTX order book
     const orderBooks = await getOrderBookResponse(orderBookURL, res);
     
-    return orderBooks;
-    
-    // Step 02: Confirm the income to order book
-    
+    // Step 02: Handle requests to buy or sell a particular amount of a currency (the base currency) with another currency (the quote currency)
+    // Ensure to only support spot (not futures) markets on FTX.
+    // Note that the quantity your user enters will rarely match a quantity in the order book exactly.
+
     // Step 03: Find the match and response
+    // Code will need to aggregate orders in the order book or use parts of orders to arrive at the exact quantity, and your final quote will be a weighted average of those prices.
+
+    const getTotalValue = 70;
+    const getPriceValue = 70;
+
+    if (action === ACTION_TYPES.buy) {
+        return {
+            total: getTotalValue,
+            price: getPriceValue,
+            currency: quote_currency
+        };
+    }
+
+    if (action === ACTION_TYPES.sell) {
+        return {
+            total: getPriceValue + 1,
+            price: getPriceValue + 1,
+            currency: quote_currency
+        };
+    }
 }
