@@ -18,7 +18,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Set paths/routes
-app.get(PATHS.BASE, require('./base/base.controller'));
+require('./base/base.controller')(app); 
+require('./trades/trade.controller')(app); 
 
 app.listen(PORT, () => {
     console.log('Server is running on PORT ' + PORT);

@@ -1,4 +1,4 @@
 module.exports = {
     success: 'success',
-    fail: 'fail'
+    badRequest: 'bad-request'
 };

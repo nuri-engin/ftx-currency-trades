@@ -1,6 +1,14 @@
 # ftx-currency-trades
 A web service that provides quotes for digital currency trades using data from the​ ​ FTX​ orderbook.
 
+## # Application routes and Postman collections
+Follow the collections' README file to find-out available routes.s
+Application built-in API request samples exist with Postman Collection folder.
+
+Go to: [/postman-collections/README.md](postman-collections/)
+
+---
+
 ## # Time consume
 1. Planing: Undersanding and planing took almost 1.5 hour
 2. MVP-scaffolding: ....
@@ -19,15 +27,8 @@ A web service that provides quotes for digital currency trades using data from t
 6. Accepts JSON body w/ dummy
 7. Response JSON body w/ dummy
 8. Match consumer input with request w/ FTX
-> Aim to finalise by today (01/12/2021)
+> Aim to finalize by today (01/12/2021)
 9. Match consumer input with response /Response
-> Aim to finalise by tomorrow (02/12/2021)
+> Aim to finalize by tomorrow (02/12/2021)
 10. Code cleaning and moving into better source-code w/ boilerplate
-> Aim to finalise by Friday day... (03/12/2021)
-
----
-
-## # Postman collections
-Application built-in API request samples exist with Postman Collection folder.
-
-Go to: [/postman-collections/README.md](postman-collections/)
+> Aim to finalize by Friday day... (03/12/2021)
