@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "8b3c897f-013f-46e9-b5c6-9de687ab59e4",
+		"name": "FtxCurrencyTrades",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FTX SpotMarket Orderbook",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ftx.com/api/markets/BTC/USD/orderbook?depth=20",
+					"protocol": "https",
+					"host": [
+						"ftx",
+						"com"
+					],
+					"path": [
+						"api",
+						"markets",
+						"BTC",
+						"USD",
+						"orderbook"
+					],
+					"query": [
+						{
+							"key": "depth",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hello to Base",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LOCAL}}",
+					"host": [
+						"{{LOCAL}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
