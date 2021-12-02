@@ -14,7 +14,7 @@ Go to: [/postman-collections/README.md](postman-collections/)
 3. Apply API Logic to recive request: 2 hours
 4. Planing API Logic to response: 45 minutes
 5. Apply API Logic to response: 2.5 hours
-6. Code quality improvments: ....
+6. Code quality improvments: 30 minutes
 
 ## # [OKr (Objective Key-Result)](https://www.whatmatters.com/faqs/okr-meaning-definition-example/) Planning
 1. ✅ - Understand the CASE steps 
@@ -33,7 +33,7 @@ Go to: [/postman-collections/README.md](postman-collections/)
 6. Match consumer input with response /Response
 > End of `TimeConsume.4 & TimeConsume.5`
 7. Code cleaning and moving into better source-code w/ boilerplate
-> Aim to finalize by Friday day... (03/12/2021)
+> End of `TimeConsume.4 & TimeConsume.6`
 
 ## # API logic
 1. Determine between 'bids/asks': Consumer's "BUY" request goes to `orderbook.asks` and "SELL" request goes into the `orderbook.bids`.
