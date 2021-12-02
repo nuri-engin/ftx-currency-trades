@@ -18,7 +18,7 @@ const getOrderBookResponse = async (orderBookURL, res) => {
     return axios.get(orderBookURL)
         .then(orderBookRes => {
             if (!confirmFtxOrderBookResponse(orderBookRes)) {
-                res.status(400).send({
+                return res.status(400).send({
                     status: STATUS_CODES.badRequest,
                     message: "Something got wrong!"
                 });
@@ -32,7 +32,7 @@ const getOrderBookResponse = async (orderBookURL, res) => {
 
         })
         .catch(err => {
-            res.status(400).send({
+            return res.status(400).send({
                 status: STATUS_CODES.badRequest,
                 message: err
             });
