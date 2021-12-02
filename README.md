@@ -15,6 +15,7 @@ Go to: [/postman-collections/README.md](postman-collections/)
 4. Planing API Logic to response: 45 minutes
 5. Apply API Logic to response: 2.5 hours
 6. Code quality improvments: 30 minutes
+> Total: 9 hours 15 minutes.
 
 ## # [OKr (Objective Key-Result)](https://www.whatmatters.com/faqs/okr-meaning-definition-example/) Planning
 1. ✅ - Understand the CASE steps 
