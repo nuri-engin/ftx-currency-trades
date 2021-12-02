@@ -1,6 +1,13 @@
 # ftx-currency-trades
 A web service that provides quotes for digital currency trades using data from the​ ​ [FTX​ orderbook](https://docs.ftx.com/#get-orderbook).
 
+## # Getting started
+- Ensure to install Node and NPM to your computer.
+- Clone the repo and go to the `ftx-currency-trades` folder.
+- Run `npm install` within your CLI tool. 
+- After that, run the `npm start` and ensure to see "Server is running on PORT 4000" message on your console.
+- Now you can open Postman and request to the available routes.
+
 ## # Application routes and Postman collections
 Application routes and built-in API request samples exist with Postman Collection folder.
 
