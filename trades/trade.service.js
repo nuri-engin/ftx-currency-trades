@@ -41,18 +41,15 @@ module.exports = {
      const comparedOrder = !!filteredOrderBooks && findClosest(filteredOrderBooks, amount);
 
      // 4. Left-out amount: So we have compared the values and now store the extra value between two amount of orderbook and consumer.
-    //  const leftOutAmount = amount - comparedOrder.gap;
+     const totalAmount = amount + comparedOrder.gap;
 
-    //  // 5. Aggreation process: Find the one unit price for orderbook amount on the closest "bids/asks". (amount / price)
-    //  const orderBookUnitPrice = comparedOrder.amount / comparedOrder.price;   
-   
-    //  // 6. Aggreation process: Multiply one unit amount price to the left-out amount value (left-out amount * one-unit amount price)
-    //  const aggreatedPrice = leftOutAmount * orderBookUnitPrice; 
+     // 5. Aggreation process: Multiply one unit amount price to the left-out amount value (left-out amount * one-unit amount price)
+     const aggreatedPrice = totalAmount * comparedOrder.unitPrice ; 
 
      // 6.Response back to the consumer with the final quote which is a weighted average of newly price.
      return {
-         total: 'total value',
-         price: 'price',
+         total: totalAmount.toFixed(4), //Total quantity of quote currency
+         price: aggreatedPrice.toFixed(4), // The per-unit cost of the base currency
          currency: quote_currency
      };
 }

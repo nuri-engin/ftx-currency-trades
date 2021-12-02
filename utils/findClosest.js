@@ -4,15 +4,15 @@ function findClosest(arr, target) {
     // Step 001: Find out gaps
     let gapResultsArr = [];
 
-    arr.forEach((inlineArr, i) => {
+    arr.forEach(orderArr => {
         // Find difference between target and current fella;
         // Get the second index of array which references to the amount of this order.
-        const gapValue = target - inlineArr[1]; 
+        const gapValue = Math.abs(target - orderArr[1]); 
 
         // Store this gap and unit price to use later on...
         gapResultsArr.push({
             gap: gapValue,
-            unitPrice: inlineArr[0] / inlineArr[1]
+            unitPrice: orderArr[0] / orderArr[1]
         });
     });
 
