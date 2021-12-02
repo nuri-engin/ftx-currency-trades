@@ -16,7 +16,7 @@ Go to: [/postman-collections/README.md](postman-collections/)
 5. Apply API Logic to response: ...
 6. Code quality improvments: ....
 
-## # OKr Planning
+## # [OKr (Objective Key-Result)](https://www.whatmatters.com/faqs/okr-meaning-definition-example/) Planning
 1. ✅ - Understand the CASE steps 
 2. ✅ - Understand the FTX orderbook
 3. ✅ - Understand the desired API context: Request and Response
