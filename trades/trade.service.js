@@ -1,10 +1,9 @@
-// Call the constants/configs
-const { ACTION_TYPES } = require('../constants');
-
 // Call the utils/helper functions
 const generateMarketPair = require('../utils/generateMarketPair');
 const generateFTXOrderBookURL = require('../utils/generateFTXOrderBookURL');
 const getOrderBookResponse = require('../utils/getOrderBookResponse');
+const determineBidsOrAsks = require('../utils/determineBidsOrAsks');
+const findClosest = require('../utils/findClosest');
 
 module.exports = {
     proceedTradeRequest
@@ -22,34 +21,38 @@ module.exports = {
  * }
  */
  async function proceedTradeRequest({ res, action, base_currency, quote_currency, amount }) {
-    let marketPair;
-
-    if (action === ACTION_TYPES.buy) {
-        marketPair = generateMarketPair(base_currency, quote_currency);
-    }
-
-    if (action === ACTION_TYPES.sell) {
-        marketPair = generateMarketPair(quote_currency, base_currency);
-    }
-
-    const orderBookURL = generateFTXOrderBookURL(marketPair); 
-
-    // Step 01: Request to the FTX order book
-    const orderBooks = await getOrderBookResponse(orderBookURL, res);
-    
-    // Step 02: Handle requests to buy or sell a particular amount of a currency (the base currency) with another currency (the quote currency)
-    // Ensure to only support spot (not futures) markets on FTX.
-    // Note that the quantity your user enters will rarely match a quantity in the order book exactly.
-
-    // Step 03: Find the match and response
-    // Code will need to aggregate orders in the order book or use parts of orders to arrive at the exact quantity, and your final quote will be a weighted average of those prices.
+     // Ensure to convert amount to the Number!
+     // Let convert the 'amount' if exist...
+     amount = Number(amount);
      
-    const getTotalValue = 70; //Total quantity of quote currency
-    const getPriceValue = 70; //The per-unit cost of the base currency
+     // 1. Determine between 'bids/asks': Consumer's "BUY" request goes to orderbook.asks and "SELL" request goes into the orderbook.bids.
+     const marketPair = generateMarketPair(base_currency, quote_currency);
+     const orderBookURL = generateFTXOrderBookURL(marketPair); 
 
-    return {
-        total: getTotalValue,
-        price: getPriceValue,
-        currency: quote_currency
-    };
+     // Get all ORDERS from market
+     const orderBooks = await getOrderBookResponse(orderBookURL, res);
+
+     // Find out consumer asks for BIDS or ASKS
+     const bidsOrAsks = determineBidsOrAsks(action);
+     const filteredOrderBooks = !!orderBooks && !!bidsOrAsks && orderBooks.message[bidsOrAsks]
+
+     // 2. Grab the consumer's 'amount': We will need to use 'amount' value provided by the consumer in both case for 'bids/asks'.
+     // 3. Compare to orderbook: Find the most closest 'amount' value from orderbook regarding 'bids/asks' differentiation.
+     const comparedOrder = !!filteredOrderBooks && findClosest(filteredOrderBooks, amount);
+
+     // 4. Left-out amount: So we have compared the values and now store the extra value between two amount of orderbook and consumer.
+    //  const leftOutAmount = amount - comparedOrder.gap;
+
+    //  // 5. Aggreation process: Find the one unit price for orderbook amount on the closest "bids/asks". (amount / price)
+    //  const orderBookUnitPrice = comparedOrder.amount / comparedOrder.price;   
+   
+    //  // 6. Aggreation process: Multiply one unit amount price to the left-out amount value (left-out amount * one-unit amount price)
+    //  const aggreatedPrice = leftOutAmount * orderBookUnitPrice; 
+
+     // 6.Response back to the consumer with the final quote which is a weighted average of newly price.
+     return {
+         total: 'total value',
+         price: 'price',
+         currency: quote_currency
+     };
 }
