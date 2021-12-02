@@ -13,7 +13,7 @@ Go to: [/postman-collections/README.md](postman-collections/)
 2. MVP-scaffolding: 2 hours
 3. Apply API Logic to recive request: 2 hours
 4. Planing API Logic to response: 45 minutes
-5. Apply API Logic to response: ...
+5. Apply API Logic to response: 2.5 hours
 6. Code quality improvments: ....
 
 ## # [OKr (Objective Key-Result)](https://www.whatmatters.com/faqs/okr-meaning-definition-example/) Planning
@@ -31,7 +31,7 @@ Go to: [/postman-collections/README.md](postman-collections/)
 5. ✅ - Match consumer input with request to the FTX's `orderbook` API.
 > End of `TimeConsume.3`
 6. Match consumer input with response /Response
-> Aim to finalize by tomorrow (02/12/2021)
+> End of `TimeConsume.4 & TimeConsume.5`
 7. Code cleaning and moving into better source-code w/ boilerplate
 > Aim to finalize by Friday day... (03/12/2021)
 

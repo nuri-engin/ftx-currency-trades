@@ -8,6 +8,6 @@ module.exports = app => {
 function handleBaseRequest(req, res, next) {
     res.status(200).send({
         status: STATUS_CODES.success,
-        message: "Welcome to the FTX Currency Trade API"
+        message: "Welcome to the FTX Currency Trade API. Please request to '/api/v1/trade' to use service!"
     });
 }
