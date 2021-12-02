@@ -31,9 +31,9 @@ Go to: [/postman-collections/README.md](postman-collections/)
 > End of `TimeConsume.2`
 5. ✅ - Match consumer input with request to the FTX's `orderbook` API.
 > End of `TimeConsume.3`
-6. Match consumer input with response /Response
+6. ✅ - Match consumer input with response /Response
 > End of `TimeConsume.4 & TimeConsume.5`
-7. Code cleaning and moving into better source-code w/ boilerplate
+7. ✅ - Code cleaning and moving into better source-code w/ boilerplate
 > End of `TimeConsume.4 & TimeConsume.6`
 
 ## # API logic
