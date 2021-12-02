@@ -34,7 +34,7 @@ Go to: [/postman-collections/README.md](postman-collections/)
 6. ✅ - Match consumer input with response /Response
 > End of `TimeConsume.4 & TimeConsume.5`
 7. ✅ - Code cleaning and moving into better source-code w/ boilerplate
-> End of `TimeConsume.4 & TimeConsume.6`
+> End of `TimeConsume.6`
 
 ## # API logic
 1. Determine between 'bids/asks': Consumer's "BUY" request goes to `orderbook.asks` and "SELL" request goes into the `orderbook.bids`.
