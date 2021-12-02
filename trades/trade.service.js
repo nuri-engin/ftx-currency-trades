@@ -22,7 +22,16 @@ module.exports = {
  * }
  */
  async function proceedTradeRequest({ res, action, base_currency, quote_currency, amount }) {
-    const marketPair = generateMarketPair(base_currency, quote_currency);
+    let marketPair;
+
+    if (action === ACTION_TYPES.buy) {
+        marketPair = generateMarketPair(base_currency, quote_currency);
+    }
+
+    if (action === ACTION_TYPES.sell) {
+        marketPair = generateMarketPair(quote_currency, base_currency);
+    }
+
     const orderBookURL = generateFTXOrderBookURL(marketPair); 
 
     // Step 01: Request to the FTX order book
@@ -34,23 +43,13 @@ module.exports = {
 
     // Step 03: Find the match and response
     // Code will need to aggregate orders in the order book or use parts of orders to arrive at the exact quantity, and your final quote will be a weighted average of those prices.
+     
+    const getTotalValue = 70; //Total quantity of quote currency
+    const getPriceValue = 70; //The per-unit cost of the base currency
 
-    const getTotalValue = 70;
-    const getPriceValue = 70;
-
-    if (action === ACTION_TYPES.buy) {
-        return {
-            total: getTotalValue,
-            price: getPriceValue,
-            currency: quote_currency
-        };
-    }
-
-    if (action === ACTION_TYPES.sell) {
-        return {
-            total: getPriceValue + 1,
-            price: getPriceValue + 1,
-            currency: quote_currency
-        };
-    }
+    return {
+        total: getTotalValue,
+        price: getPriceValue,
+        currency: quote_currency
+    };
 }
