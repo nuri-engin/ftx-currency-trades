@@ -43,13 +43,13 @@ module.exports = {
 
      // Grab the consumer's 'amount': We will need to use 'amount' value provided by the consumer in both case for 'bids/asks'.
      // Compare to orderbook: Find the most closest 'amount' value from orderbook regarding 'bids/asks' differentiation.
-     const comparedOrder = !!filteredOrderBooks && findClosest(filteredOrderBooks, amount);
+     const closestOrder = !!filteredOrderBooks && findClosest(filteredOrderBooks, amount);
 
      // Left-out amount: So we have compared the values and now store the extra value between two amount of orderbook and consumer.
-     const totalAmount = !!comparedOrder && amount + comparedOrder.gap;
+     const totalAmount = !!closestOrder && amount + closestOrder.diff;
 
      // Aggreation process: Multiply one unit amount price to the left-out amount value (left-out amount * one-unit amount price)
-     const aggreatedPrice = !!totalAmount && totalAmount * comparedOrder.unitPrice; 
+     const aggreatedPrice = !!totalAmount && totalAmount * closestOrder.unitPrice; 
 
      // Response back to the consumer; 
      // Firstly ensure no any problem left behind!

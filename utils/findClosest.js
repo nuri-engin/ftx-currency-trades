@@ -17,7 +17,7 @@
 function findClosest(arr, target) {
 
     // First step: Find out gaps
-    let gapResultsArr = [];
+    let diffArr = [];
 
     arr.forEach(orderArr => {
         // Find difference between target and current fella; Ensure to store a positive number for always.
@@ -25,20 +25,20 @@ function findClosest(arr, target) {
         const gapValue = Math.abs(target - orderArr[1]); 
 
         // Store this gap and unit price to use later on...
-        gapResultsArr.push({
-            gap: gapValue,
+        diffArr.push({
+            diff: gapValue,
             unitPrice: orderArr[0] / orderArr[1]
         });
     });
 
     // Secod step: Find out the closest gap.
     // Sort the array to grab closest value from gap value
-    gapResultsArr.sort((current, next) => {
+    diffArr.sort((current, next) => {
         return current.gap - next.gap;
     });
     
     // So now we have the lowest gap value on the array and we can use it only...
-    return gapResultsArr.shift();
+    return diffArr.shift();
 }
  
 module.exports = findClosest;
