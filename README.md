@@ -44,3 +44,16 @@ Go to: [/postman-collections/README.md](postman-collections/)
     - Find the one unit price for orderbook amount on the closest "bids/asks". (amount / price) 
     - Multiply one unit amount price to the left-out amount value (left-out amount * one-unit amount price)
 6. Response back to the consumer with the final quote which is a weighted average of newly price.
+
+## # Posible improvments the project
+- Implementing a Swagger(OpenAPI) API documentation for the consumers.
+    - Also a JSdoc for the developers.
+- Applying more securty fixes (Helmet, RateLimiter, XSS injection, Snyk scanning etc.)
+- Deploying the application to the Heroku cloud services.
+- Providing a CI/CD process either with Heroku CI or Travis CI.
+    - Enviroment seperations for the Main / Development products.
+- Test cases: Providing the NodeJS test pyramid (Unit, Integration, E2E)
+- More code quality approches: Lint, Prettier, husky, lint-staged, code-editor standards 
+- Service health monitors: App Telemetry and App Service status page.
+- Validation control: Using Joi and similar project to check consumer inputs. 
+- A fully-functional boiler-plate adaptation.

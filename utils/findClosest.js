@@ -2,12 +2,13 @@
  * Here is the main-logic which lays down with service (other than 'confirm...' functions)
  * 
  * So far, basically we fetched orderbook response from FTX and now time to find the closest value.
- * Here after we will not be worry about consumer's "buy" or "sell" decisions because of we just move around the already filtered orderbooks.
+ * Here after we will not be worry about consumer's "buy" or "sell" decisions because of we already got filtered orderbooks.
  * 
  * The logic goes within two main steps; Generating a new array which has objects of already calculated GAP value and unitPrice for each record.
- * Finally we sort with ASC mode the collected values between those gaps and grab the the first record of the newly generated array.
+ * And finally, we sort the gaps values with ASC mode and choosed the the first record.
  * 
  * The rest of app logic will use the `gap` and `unitPrice` properties to finalize the process.
+ * Thus we ensure here only lays the single-responsibilty of finding the closest value with helper `unitPrice` property. 
  * 
  * @param {Array} arr Array of orderbooks with dimensional stored arrays.
  * @param {Number} target The amount value that consumer provided. 
